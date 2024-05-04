@@ -72,7 +72,7 @@ function Navbar() {
                         </a>
                         <Link to={"/cart"} className='cart-widget'>
                             <div className='cart-status'>
-                                {cart.length}
+                                {/* {cart.length} */}
                             </div>
                             <i className="dripicons-shopping-bag"></i>
                             <p>My Bag</p>
