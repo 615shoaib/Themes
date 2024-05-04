@@ -60,7 +60,7 @@ function Shop() {
             </div>
             <div className="row mb-5">
               {Array.isArray(products) && products.map((product, index) => (
-                <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                <div key={index} className="col-lg-4 col-md-6 col-sm-12 col-sm-12">
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <div
                       className="card popular-card"

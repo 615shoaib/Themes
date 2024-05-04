@@ -5,7 +5,6 @@ import Shop from "./Pages/Shop/Shop";
 import CartDetail from "./Components/Header/CartDetail";
 import Contactus from "./Pages/ContactUs/Contact-us";
 import Aboutus from "./Pages/Aboutus/Aboutus";
-import Navbar from "./Components/Navbar/Navbar";
 import Checkout from "./Components/Header/Checkout/Checkout";
 import Demo from "./Components/Navbar/Demo";
 import ProductDetail from "./Pages/Homepage/CartDetailpage/CartDetail";
@@ -13,12 +12,15 @@ import HeartData from "./Components/Navbar/HeartData";
 import FooterComp from "./Components/Footer/FooterComp";
 import ScrollTops from "./Components/ScrollTop/ScrollTop";
 import OrderDone from "./Components/Header/Checkout/OrderDone";
+import Navbar from "./Components/Navbar/Navbar";
+
 
 function App() {
   const location = useLocation();
 
   return (
     <>
+    {/* <Navbar /> */}
       {location.pathname !== "/order-done" && <Demo />}
       <Routes>
         <Route path="/" element={<Homepages />} />

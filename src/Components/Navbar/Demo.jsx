@@ -14,7 +14,7 @@ const Demo = () => {
 
   return (
     <>
-       <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 d-flex justify-content-between">
+       <nav className="navbar navbar-expand-lg navbar-light w-100 d-flex justify-content-between">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <img  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png" style={{width:'200px'}}/>
@@ -74,7 +74,7 @@ const Demo = () => {
                   </li>
                 </ul>
 
-              <div className="row text-align-right">
+              {/* <div className="row text-align-right">
                 <div className="col-lg-12 col-md-10 d-flex">
                   <div className="mx-3 p-2 mt-2 ms-5">
                   <Link to="/add-wishlist">
@@ -103,7 +103,22 @@ const Demo = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </div> */}
+
+<div className="nav-product-widgets">
+  
+                        <Link to='/add-wishlist' className='wishlist-widget'>
+                        <i className="fa-regular fa-heart fs-4 text-dark"></i>
+                            <p>Wishlist</p>
+                        </Link>
+                        <Link to={"/cart"} className='cart-widget'>
+                            <div className='cart-status'>
+                                {/* {cart.length} */}
+                            </div>
+                            <i className="dripicons-shopping-bag"></i>
+                            <p>My Bag</p>
+                        </Link>
+                    </div>
             </div>
           </div>
         </nav>

@@ -1,51 +1,28 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import Header from "../Header/Header";
 
-const Navbar = () => {
-  return (
-    <>
-      
-    <div className="d-flex justify-content-arounf"></div>
-      <div className="container-fluid ">
-        <div className="row">
-          {/* <nav className="navbar navbar-expand-lg bg-white"> */}
-          <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div className="container-fluid mx-auto sm:px-6 lg:px-8">
-              <NavLink to="/" className="navbar-brand">
-                <img
-                  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png"
-                  alt="Logo"
-                  className="logo"
-                  style={{
-                    maxWidth: "100%",
-                    width: "100%",
-                    height: "auto",
-                    position: "relative",
-                    top: "-50px",
-                    marginLeft: "30%",
-                  }}
-                />
-              </NavLink>
+import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav gap-3 mx-auto">
+
+
+function Navbar() {
+// const {cart} = useProductContext();
+
+    return (<>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container">
+                <a className="navbar-brand" href="#"><img src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png" alt=""/></a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul className="navbar-nav gap-3 mx-auto">
                   <li className="nav-item">
                     <NavLink
                       to="/"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                       HOME
                     </NavLink>
@@ -54,7 +31,7 @@ const Navbar = () => {
                     <NavLink
                       to="/shop"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                       SHOP
                     </NavLink>
@@ -64,30 +41,47 @@ const Navbar = () => {
                     <NavLink
                       to="/about-us"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                      About us
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      to="/contact-up"
+                      to="/contact-us"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
-                      Contact Up
+                      Contact Us
                     </NavLink>
                   </li>
                 </ul>
-                <Header />
-              </div>
+                    <form className="search-form" role="search">
+                        <div className="search-group">
+                            <input className="form-control" type="search" placeholder="Search"
+                                   aria-label="Search"/>
+                            <div className="search-icon">
+                                <i className="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div className="nav-product-widgets">
+                        <a href='#' className='wishlist-widget'>
+                            <i className="dripicons-heart"></i>
+                            <p>Wishlist</p>
+                        </a>
+                        <Link to={"/cart"} className='cart-widget'>
+                            <div className='cart-status'>
+                                {cart.length}
+                            </div>
+                            <i className="dripicons-shopping-bag"></i>
+                            <p>My Bag</p>
+                        </Link>
+                    </div>
+                </div>
             </div>
-          </nav>
-        </div>
-      </div>
-    </>
-  );
-};
+        </nav>
+    </>)
+}
 
 export default Navbar;
-  
