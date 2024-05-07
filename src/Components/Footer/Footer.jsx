@@ -1,4 +1,5 @@
 import React from "react";
+import FooterLogo from "../../Images/logo.png"
 
 const Footer = () => {
   const LiStyle = {
@@ -20,7 +21,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-3 col-md-6 col-12">
                 <img
-                  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo-1.png"
+                  src={FooterLogo}
                   alt="logo"
                   className="mb-3 mx-auto d-block"
                   style={{ maxWidth: "200px" }}

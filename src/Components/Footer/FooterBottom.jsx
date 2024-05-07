@@ -1,4 +1,5 @@
 import React from "react";
+import Payment from "../../Images/payment.png"
 
 const FooterBottom = () => {
   return (
@@ -15,7 +16,7 @@ const FooterBottom = () => {
             <div className="col-sm-6 d-flex justify-content-end">
               <div className="widget-payment">
                 <img
-                  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/payment.png"
+                  src={Payment}
                   alt="payment"
                 />{" "}
               </div>
