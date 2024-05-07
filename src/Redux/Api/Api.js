@@ -5,12 +5,9 @@ import { apikesy } from './apikesy'
 export const ProductsApi = async() => {
 
 try {
-    const APIDATA = await fetch('https://zahidg21.sg-host.com/wp-json/wc/v3/products',{
+    const APIDATA = await fetch('https://whatshopify.vercel.app/products',{
       method: "GET",
-      headers:{
-        'Authorization' : `Basic ${apikesy()}`,
-        'content-type':'application/json',
-      }
+     
     })
     if(!APIDATA){
       throw('error messahe')

@@ -83,7 +83,7 @@ const Demo = () => {
                 className="cart-widget wishlist-widget"
               >
                 <div className="cart-status ">{/* {HeartItemsCount} */}</div>
-                <i class="fa-regular fa-heart"></i>
+                <i className="fa-regular fa-heart"></i>
                 <p>WhishList</p>
               </Link>
               <Link to={"/add-to-cart"} className="cart-widget">

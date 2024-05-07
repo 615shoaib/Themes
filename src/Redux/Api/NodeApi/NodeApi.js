@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const addToNodeApi =(product)=>{
     console.log(product)
-    axios.post('http://localhost:3000/api/add-to-cart',
+    axios.post('https://themes-backend.vercel.app/api/add-to-cart',
     {productId:product.id,
        name: product.name,
        price:product.price,
