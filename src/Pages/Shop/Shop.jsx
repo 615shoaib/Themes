@@ -8,31 +8,27 @@ import HeartIcon from "../Homepage/CatgoeyBased/HeartIcon";
 
 function Shop() {
   const dispatch = useDispatch();
-
   const { ProductsItems } = useSelector((state) => state.products);
   const [loading, setLoading] = useState(true);
-
   const products = ProductsItems;
+
   useEffect(() => {
-    const data = async () => {
+    const fetchData = async () => {
       await dispatch(fetchProductsAsync());
       setLoading(false);
     };
-    data();
+    fetchData();
   }, [dispatch]);
+
   return (
     <>
       {loading ? (
-        <div className="row mb-5 ">
+        <div className="container mt-5">
+        <div className="row mb-5">
           {Array.from({ length: 9 }).map((_, index) => (
-            <div key={index} className="col-lg-4 col-md-6 col-sm-12 mt-3">
+            <div key={index} className="col-lg-3 col-md-6 col-sm-12 mt-3">
               <div className="card px-4">
-                <Skeleton
-                  variant="rectangular"
-                  width={300}
-                  height={200}
-                  animation="wave"
-                />
+                <Skeleton variant="rectangular" width={300} height={200} animation="wave" />
                 <div className="card-body">
                   <h5 className="card-title">
                     <Skeleton variant="text" width={200} animation="wave" />
@@ -48,59 +44,33 @@ function Shop() {
             </div>
           ))}
         </div>
+        </div>
       ) : (
-        <div className="popular-container">
-          <div className="container">
-            <div className="section-header text-center">
-              <h1>Popular Products</h1>
-              <p>
-                Made with care for your little ones, our products are perfect
-                for every <br /> occasion. Check it out.
-              </p>
-            </div>
-            <div className="row mb-5">
-              {Array.isArray(products) && products.map((product, index) => (
-                <div key={index} className="col-lg-4 col-md-6 col-sm-12 col-sm-12">
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <div
-                      className="card popular-card"
-                      style={{ maxWidth: "150px", width: "100%" }}
-                    >
-                      {product.images && product.images.length > 0 && (
-                        <img
-                          src={product.images[0].src}
-                          alt=""
-                          loading="lazy"
-                          className="card-image img-fluid "
-                        
-                        />
-                      )}
-
-                      <div className="card-overlay popular-card-overlay top d-flex justify-content-center">
-                        <div className="card-body d-flex">
-                          <div className="add-to-cart">
-                            <AddtoCart product={product} />
-                          </div>
-                          <div className="view-cart">
-                            <ViewCart product={product} />
-                          </div>
-                          <div className="icon-heart">
-                            <HeartIcon product={product}/>
-                          </div>
-                        </div>
-                      </div>
+        <div className="container mt-5">
+          <div className="row row-cols-lg-4 row-cols-1 row-cols-md-3 g-4">
+            {products.map((product, index) => (
+              <div key={index} className="col">
+                <div className="card">
+                  {product.images && product.images.length > 0 && (
+                    <img
+                      src={product.images[0].src}
+                      alt={product.name}
+                      className="card-img-top"
+                    />
+                  )}
+                   <div className="mt-auto d-flex justify-content-between align-items-center">
+                      <AddtoCart product={product} />
+                      <ViewCart product={product} />
+                      <HeartIcon product={product} />
                     </div>
-                    <div className="popular-card-content card-body">
-                      <h5>{product.name}</h5>
-
-                      <div>
-                        <h5 className="popular-price">${product.price}</h5>
-                      </div>
-                    </div>
+                  <div className="card-body d-flex flex-column">
+                    <h5 className="card-title">{product.name}</h5>
+                    <p className="card-text">${product.price}</p>
+                   
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       )}

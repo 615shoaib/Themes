@@ -336,8 +336,12 @@ footer {
   background-color: #000000;
 }
 .activeclass.active {
- 
+ border: none;
   color: #ffff !important;
+}
+.activeclass:focus{
+  outline: none;
+  border: none !important;
 }
 
 
