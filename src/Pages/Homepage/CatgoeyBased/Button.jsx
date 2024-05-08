@@ -19,6 +19,7 @@ const Button = ({ filteredCategories, selectedCategory, loading, setLoading }) =
         .then(() => setLoading(false))
         .catch(() => setLoading(false));
     }
+    
   };
 
   return (
@@ -29,7 +30,7 @@ const Button = ({ filteredCategories, selectedCategory, loading, setLoading }) =
          <li key={category.id} >
            <NavLink
              to="/"
-             className={`nav-link text-white activeclass border-none  ${selectedCategory === category.id ? 'btn-secondary' : 'btn-dark'}`}             aria-current="page"
+             className={`nav-link text-white activeclass border-none  ${selectedCategory === category.id ? 'bg-secondary' : 'btn-dark'}`}             aria-current="page"
              style={{ borderBottom: "1px solid #ccc", minHeight: '80px' }}
              onClick={() => handleCategorySelect(category.id)}
           disabled={loading}
