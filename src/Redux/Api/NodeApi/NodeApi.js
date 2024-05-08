@@ -1,20 +1,26 @@
 import axios from "axios";
 
-export const addToNodeApi =(product)=>{
-    console.log(product)
-    axios.post('https://themes-backend.vercel.app/api/add-to-cart',
-    {productId:product.id,
-       name: product.name,
-       price:product.price,
-       images:product.images[0].src,
-      })   
-    .then(response => {
-            console.log('Product added to cart:', response.data);
-        })
-        .catch(error => {
-            console.error('Error adding product to cart:', error);
-        });
-}
+export const addToNodeApi = (product) => {
+  console.log('Adding product to cart:', product);
+
+  axios.post('http://localhost:3000/api/add-to-cart', {
+    productId: product.id,
+    name: product.name,
+    price: product.price,
+    images: product.images[0].src
+  })
+  .then(response => {
+    console.log('Product added to cart:', response.data);
+  })
+  .catch(error => {
+    console.error('Error adding product to cart:', error);
+
+    if (error.response) {
+      console.error('Server response:', error.response.data);
+    }
+  });
+};
+
 
 
 export const RemoveSingleApi =(Id)=>{

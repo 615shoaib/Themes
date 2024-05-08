@@ -333,13 +333,14 @@ footer {
   cursor: pointer;
 }
 .activeclass:hover {
-  background-color: #000000;
+  background-color: #2b2a2a91;
 }
 .activeclass.active {
  border: none;
   color: #ffff !important;
 }
 .activeclass:focus{
+  
   outline: none;
   border: none !important;
 }
@@ -1059,6 +1060,9 @@ width: 100%;
   .sidebar {
     width: 100% !important;
   }
+
+
+  
   
   
   .navbar-toggler {
@@ -1072,7 +1076,23 @@ width: 100%;
 }
 }
 
-
+@media (max-width:991px){
+  .navbar-collapse {
+    background: #ffffff;
+    max-height: 400px;
+    overflow-y: auto;
+    border: medium none;
+    transform: translate(0%, 10%);
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 99999;
+    top: 70%;
+    box-shadow: 0 0 10px 0 #000;
+    width: 100%;
+    
+}
+}
 
 @media (max-width: 768px) {
   .overflow {

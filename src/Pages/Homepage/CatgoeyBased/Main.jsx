@@ -16,7 +16,7 @@ const Main = () => {
 
 
   useEffect(() => {
-    // Fetch categories
+
     dispatch(fetchCategories())
       .then(() => setLoading(false)) 
       .catch(() => setLoading(false)); 

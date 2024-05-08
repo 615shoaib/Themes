@@ -20,10 +20,7 @@ const Demo = () => {
       <nav className="navbar navbar-expand-lg navbar-light w-100 d-flex justify-content-between">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            {/* <img
-              src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png"
-              style={{ width: "200px" }}
-            /> */}
+           
             <img src={Logo} alt="/" />
           </Link>
           <button
