@@ -11,22 +11,20 @@ const CartDetail = () => {
     dispatch(removeAllOrder());
   };
 
-  const handleSingleOrder = (id,orderId) => {
-    dispatch(removeSingleCart({id: id, orderId }));
+  const handleSingleOrder = (id) => {
+    dispatch(removeSingleCart({ id }));
   };
-
 
   const handleClick = (itemId) => {
     dispatch(IncremesntFuncation({ id: itemId }));
   };
 
   const handleDecrement = (itemId) => {
-    console.log(itemId)
     dispatch(DecrementFuncation({ id: itemId }));
   };
 
-  const totalPrice = cartItems.reduce((acc,item)=>acc+(item.price * item.quantity),0)
-  
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
   return (
     <div className="d-flex justify-content-center align-items-center ">
       <div className="container">
@@ -34,7 +32,7 @@ const CartDetail = () => {
           <div className="row">
             <div className="col-lg-12">
               <h2>Shopping Cart</h2>
-              <table className="table mb-5 table-resposnive">
+              <table className="table mb-5 table-responsive">
                 <thead>
                   <tr>
                     <th>Product Image</th>
@@ -43,36 +41,35 @@ const CartDetail = () => {
                     <th>Price</th>
                   </tr>
                 </thead>
-                {Array.isArray(cartItems) &&
-                  cartItems.map((cartItem) => (
-                    <tbody key={cartItem.id}>
-                      <tr>
-                        <td>
-                          <button className="btn " onClick={() => handleSingleOrder(cartItem.id)}>
-                            <i className=" fa fa-close"></i>
-                          </button>
-                          {cartItem.images && cartItem.images.length > 0 && (
-                            <img
-                              src={cartItem ? cartItem.images[0].src : null}
-                              alt="Product"
-                              style={{ width: "50px" }}
-                            />
-                          )}
-                        </td>
-                        <td>{cartItem.name}</td>
-                        <td>
-                          <button onClick={() => handleClick(cartItem.id, cartItem.orderId)} className="btn">+</button>
-                          {cartItem.quantity}
-                          <button onClick={() => handleDecrement(cartItem.id)} className="btn">-</button>
-                        </td>
-                        <td>{cartItem.price}</td>
-                      </tr>
-                    </tbody>
+                <tbody>
+                  {cartItems.map((cartItem) => (
+                    <tr key={cartItem.id}>
+                      <td>
+                        <button className="btn" onClick={() => handleSingleOrder(cartItem.id)}>
+                          <i className="fa fa-close"></i>
+                        </button>
+                        {cartItem.images && cartItem.images.length > 0 && (
+                          <img src={cartItem.images[0].src} alt="Product" style={{ width: "50px" }} />
+                        )}
+                      </td>
+                      <td>{cartItem.name}</td>
+                      <td>
+                        <button onClick={() => handleClick(cartItem.id)} className="btn">
+                          +
+                        </button>
+                        {cartItem.quantity}
+                        <button onClick={() => handleDecrement(cartItem.id)} className="btn">
+                          -
+                        </button>
+                      </td>
+                      <td>${(cartItem.price * cartItem.quantity).toFixed(2)}</td>
+                    </tr>
                   ))}
+                </tbody>
               </table>
               <div className="d-flex justify-content-around mb-2">
                 <button className="btn btn-dark mb-2 rounded-0">Continue Shopping</button>
-                <h1 className="product">Total Price : <span style={{color:'#388396'}}>${totalPrice.toFixed(2)}</span></h1>
+                <h1 className="product">Total Price: <span style={{ color: '#388396' }}>${totalPrice.toFixed(2)}</span></h1>
               </div>
               <div className="d-flex justify-content-around">
                 <div>
