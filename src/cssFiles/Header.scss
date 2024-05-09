@@ -1045,7 +1045,50 @@ width: 100%;
 
 
 
+// shop
+/* Shop.css */
 
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.small-image {
+  width: 250px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card-price {
+  font-size: 14px;
+  color: #888;
+}
+
+.list-view .card-img-top {
+  width: 80px;
+  height: 80px;
+}
+
+.list-view .card-content {
+  flex: 1;
+}
+
+.list-view .card-title {
+  font-size: 14px;
+}
+
+.list-view .card-price {
+  font-size: 12px;
+}
+.small-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.small-text {
+  font-size: 12px;
+}
 
 
 

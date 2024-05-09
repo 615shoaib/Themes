@@ -2,7 +2,8 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import Termone from "../../../Images/term.webp"
+import TermTwo from "../../../Images/term0.webp"
 const Slicktestimonials = () => {
   var settings = {
     dots: true,
@@ -44,22 +45,20 @@ const Slicktestimonials = () => {
       name: "Katherine Sullivan",
       title: "Manager",
       text: "Integer tincidunt nisi libero, sed aliquet ipsum fermentum eu. Duis porta egestas tellus sed vestibulum. Nam euismod elit id dolor aliquet, ut blandit massa egestas",
-      image:
-        "http://demo.roadthemes.com/james/wp-content/uploads/2014/10/blog01-150x150.jpg",
-    },
+      image:Termone
+     },
     {
       name: "Jenify Brown",
       title: "Manager",
       text: "Integer tincidunt nisi libero, sed aliquet ipsum fermentum eu. Duis porta egestas tellus sed vestibulum. Nam euismod elit id dolor aliquet, ut blandit massa egestas",
-      image:
-        "http://demo.roadthemes.com/james/wp-content/uploads/2014/10/blog02-150x150.jpg",
+      image:TermTwo
+      
     },
     {
       name: "Kathy Young",
       title: "Manager",
       text: "Integer tincidunt nisi libero, sed aliquet ipsum fermentum eu. Duis porta egestas tellus sed vestibulum. Nam euismod elit id dolor aliquet, ut blandit massa egestas",
-      image:
-        "http://demo.roadthemes.com/james/wp-content/uploads/2014/10/blog03-150x150.jpg",
+      image:Termone
     },
   ];
 
