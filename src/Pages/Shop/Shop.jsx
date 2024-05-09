@@ -35,11 +35,13 @@ function Shop() {
           onClick={() => toggleViewMode("grid")}
         >
           Grid View
+          <i className="fas fa-th-large"></i> 
         </button>
         <button
-          className={`btn mx-3 ${viewMode === "list" ? "btn-primary" : "btn-secondary"}`}
+          className={`btn mx-3  ${viewMode === "list" ? "btn-primary" : "btn-secondary"}`}
           onClick={() => toggleViewMode("list")}
         >
+          <i className="fa fa-solid fa-list "></i>
           List View
         </button>
       </div>
