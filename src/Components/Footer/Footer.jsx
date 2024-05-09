@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLogo from "../../Images/logo.png"
+import FooterLogo from "../../Images/footerlog.webp"
 
 const Footer = () => {
   const LiStyle = {
