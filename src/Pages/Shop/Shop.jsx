@@ -29,19 +29,23 @@ function Shop() {
   return (
     <div className="container mt-5">
       {/* View mode toggle buttons */}
-      <div className="d-flex justify-content-end mb-3">
+      <div className="d-flex justify-content-end mb-3 gap-2">
         <button
-          className={`btn ${viewMode === "grid" ? "btn-primary" : "btn-secondary"}`}
+          className={`btn ${
+            viewMode === "grid" ? "btn-primary" : "btn-secondary"
+          }`}
           onClick={() => toggleViewMode("grid")}
         >
+          <i className="fas fa-th-large px-2"></i>
           Grid View
-          <i className="fas fa-th-large"></i> 
         </button>
         <button
-          className={`btn mx-3  ${viewMode === "list" ? "btn-primary" : "btn-secondary"}`}
+          className={`btn mx-3  ${
+            viewMode === "list" ? "btn-primary" : "btn-secondary"
+          }`}
           onClick={() => toggleViewMode("list")}
         >
-          <i className="fa fa-solid fa-list "></i>
+          <i className="fa fa-solid fa-list px-2"></i>
           List View
         </button>
       </div>
@@ -52,7 +56,12 @@ function Shop() {
           {Array.from({ length: 9 }).map((_, index) => (
             <div key={index} className="col-lg-3 col-md-6 col-sm-12 mt-3">
               <div className="card px-4">
-                <Skeleton variant="rectangular" width={300} height={200} animation="wave" />
+                <Skeleton
+                  variant="rectangular"
+                  width={300}
+                  height={200}
+                  animation="wave"
+                />
                 <div className="card-body">
                   <h5 className="card-title">
                     <Skeleton variant="text" width={200} animation="wave" />
@@ -76,7 +85,11 @@ function Shop() {
                 <div key={index} className="col">
                   <div className="card">
                     {product.images && product.images.length > 0 && (
-                      <img src={product.images[0].src} alt={product.name} className="card-img-top small-image" />
+                      <img
+                        src={product.images[0].src}
+                        alt={product.name}
+                        className="card-img-top small-image"
+                      />
                     )}
                     <div className="mt-auto d-flex justify-content-between align-items-center">
                       <AddtoCart product={product} />
